@@ -50,6 +50,8 @@
                         <div id="google_translate_element"></div>
                     </div>
 
+                    <button class="widget-btn" id="btn-reset-all" style="width: 100%; margin-top: 10px; background: #fee2e2; color: #b91c1c; border-color: #f87171; font-weight: bold;">Reset All Settings</button>
+
                 </div>
             </div>
             <button id="accessibility-toggle-btn" title="Accessibility Menu">♿</button>
@@ -201,6 +203,31 @@
             window.speechSynthesis.speak(utterance);
         }
     }, true);
+
+    // Reset All Settings
+    document.getElementById('btn-reset-all').addEventListener('click', () => {
+        // Reset Zoom
+        currentZoom = 1.0;
+        body.style.zoom = currentZoom;
+        
+        // Remove all override classes
+        body.className = body.className.replace(/\boverride-[^\s]+/g, '').trim();
+        
+        // Disable narrator
+        if (narratorEnabled) {
+            narratorEnabled = false;
+            body.classList.remove('narrator-highlight');
+            window.speechSynthesis.cancel();
+        }
+
+        // Remove active states from buttons
+        document.querySelectorAll('.widget-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        // Send telemetry
+        sendOverrideTelemetry('reset_all', true);
+    });
 
     // Ensure voices are loaded for narrator
     window.speechSynthesis.onvoiceschanged = function() {
