@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Accessibility Enabler - AI Powered</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="background-mesh">
+        <div class="gradient-sphere sphere-1"></div>
+        <div class="gradient-sphere sphere-2"></div>
+        <div class="gradient-sphere sphere-3"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <div class="badge">AI Powered Personalization</div>
+            <h1>Digital <span class="highlight">Inclusivity</span> For All</h1>
+            <p>Experience the web on your terms. Our AI adapts websites in real-time to match your visual and cognitive needs based on how you interact.</p>
+        </header>
+
+        <section class="enabler-card">
+            <form id="proxyForm" action="/proxy" method="GET">
+                <div class="input-group">
+                    <input type="text" id="urlInput" name="url" placeholder="Enter a website URL (e.g., wikipedia.org)" required autocomplete="off">
+                    <button type="submit" class="btn-primary">
+                        <span>Make Accessible</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">👀</div>
+                    <h3>Smart Readability</h3>
+                    <p>Auto-adjusts font size and spacing based on your reading patterns.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🌗</div>
+                    <h3>Dynamic Contrast</h3>
+                    <p>Detects scrolling struggles and enhances color contrast for better visibility.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Focus Mode</h3>
+                    <p>Strips away complex layouts if erratic navigation is detected.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
